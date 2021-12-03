@@ -26,6 +26,7 @@ jobs:
             python3 manage.py test
       - snyk/scan:
           token-variable: API_TOKEN
+          fail-on-issues: false
       - store_artifacts:
           path: test-reports/
           destination: python_app

@@ -19,7 +19,8 @@ jobs:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
             - "venv"
-      - snyk/scan
+      - snyk/scan:
+          token-variable: API_TOKEN
       - run:
           name: Running tests
           command: |

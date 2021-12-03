@@ -1,5 +1,7 @@
 
-version: 2
+version: 2.1
+orbs: 
+  snyk: snyk/snyk@1.1.2
 jobs:
   build:
     docker:
@@ -17,6 +19,7 @@ jobs:
           key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
             - "venv"
+      - snyk/scan
       - run:
           name: Running tests
           command: |

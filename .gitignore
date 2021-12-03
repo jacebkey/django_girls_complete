@@ -109,3 +109,4 @@ myvenv
 
 # Editor files
 .vscode/
+.dccache
